@@ -1,12 +1,98 @@
 [
   {
-    "type": "source_file",
+    "type": "comment_line",
     "named": true,
-    "root": true,
     "fields": {}
   },
   {
-    "type": "hello",
+    "type": "comment_section",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "comment_line",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "file_content_line",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "file_entry",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "file_content_line",
+          "named": true
+        },
+        {
+          "type": "file_marker",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "file_marker",
+    "named": true,
+    "fields": {
+      "filename": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "filename",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "root": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "comment_section",
+          "named": true
+        },
+        {
+          "type": "file_entry",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "\n",
+    "named": false
+  },
+  {
+    "type": "filename",
+    "named": true
+  },
+  {
+    "type": "marker_end",
+    "named": false
+  },
+  {
+    "type": "marker_start",
     "named": false
   }
 ]

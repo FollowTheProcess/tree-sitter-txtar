@@ -9,7 +9,16 @@ tasks:
     cmds:
       - task --list
 
+  gen:
+    desc: Generate the parser
+    sources:
+      - grammar.js
+    cmds:
+      - tree-sitter generate
+
   test:
     desc: Run the parser tests
+    deps:
+      - gen
     cmds:
       - tree-sitter test

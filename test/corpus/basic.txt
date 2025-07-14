@@ -2,8 +2,31 @@
 Basic Structure
 ==================
 
-hello
+# This is a line comment, to be ignored
+
+Here is some text in the top level comment section
+
+-- file1.txt --
+Some arbitrary content in file1.txt
+-- file2.yaml --
+this:
+  one:
+    is:
+      - yaml
 
 ---
 
-(source_file)
+(source_file
+  (comment_section
+    (comment_line))
+  (file_entry
+    (file_marker
+      (filename))
+    (file_content_line))
+  (file_entry
+    (file_marker
+      (filename))
+    (file_content_line)
+    (file_content_line)
+    (file_content_line)
+    (file_content_line)))
