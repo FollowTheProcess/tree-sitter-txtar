@@ -6,9 +6,10 @@
       "camelcase": "Txtar",
       "title": "Txtar",
       "scope": "source.txtar",
-      "file-types": [
-        "txtar"
-      ],
+      "path": ".",
+      "highlights": "queries/highlights.scm",
+      "injections": "queries/injections.scm",
+      "file-types": ["txtar"],
       "injection-regex": "^txtar$",
       "class-name": "TreeSitterTxtar"
     }
