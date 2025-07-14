@@ -27,20 +27,27 @@
   {
     "type": "file_entry",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "file_content_line",
-          "named": true
-        },
-        {
-          "type": "file_marker",
-          "named": true
-        }
-      ]
+    "fields": {
+      "content": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "file_content_line",
+            "named": true
+          }
+        ]
+      },
+      "marker": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "file_marker",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -53,6 +60,26 @@
         "types": [
           {
             "type": "filename",
+            "named": true
+          }
+        ]
+      },
+      "marker_end": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "marker_end",
+            "named": true
+          }
+        ]
+      },
+      "marker_start": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "marker_start",
             "named": true
           }
         ]
@@ -89,10 +116,10 @@
   },
   {
     "type": "marker_end",
-    "named": false
+    "named": true
   },
   {
     "type": "marker_start",
-    "named": false
+    "named": true
   }
 ]

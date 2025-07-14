@@ -48,14 +48,22 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "file_marker"
-        },
-        {
-          "type": "REPEAT",
+          "type": "FIELD",
+          "name": "marker",
           "content": {
             "type": "SYMBOL",
-            "name": "file_content_line"
+            "name": "file_marker"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "content",
+          "content": {
+            "type": "REPEAT",
+            "content": {
+              "type": "SYMBOL",
+              "name": "file_content_line"
+            }
           }
         }
       ]
@@ -64,29 +72,12 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "ALIAS",
+          "type": "FIELD",
+          "name": "marker_start",
           "content": {
-            "type": "TOKEN",
-            "content": {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "STRING",
-                  "value": "--"
-                },
-                {
-                  "type": "FIELD",
-                  "name": "pre_space",
-                  "content": {
-                    "type": "PATTERN",
-                    "value": "[ \\t]*"
-                  }
-                }
-              ]
-            }
-          },
-          "named": false,
-          "value": "marker_start"
+            "type": "SYMBOL",
+            "name": "marker_start"
+          }
         },
         {
           "type": "FIELD",
@@ -97,35 +88,50 @@
           }
         },
         {
-          "type": "ALIAS",
+          "type": "FIELD",
+          "name": "marker_end",
           "content": {
-            "type": "TOKEN",
-            "content": {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "FIELD",
-                  "name": "post_space",
-                  "content": {
-                    "type": "PATTERN",
-                    "value": "[ \\t]*"
-                  }
-                },
-                {
-                  "type": "STRING",
-                  "value": "--"
-                }
-              ]
-            }
-          },
-          "named": false,
-          "value": "marker_end"
+            "type": "SYMBOL",
+            "name": "marker_end"
+          }
         },
         {
           "type": "STRING",
           "value": "\n"
         }
       ]
+    },
+    "marker_start": {
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "--"
+          },
+          {
+            "type": "PATTERN",
+            "value": "[ \\t]*"
+          }
+        ]
+      }
+    },
+    "marker_end": {
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "PATTERN",
+            "value": "[ \\t]*"
+          },
+          {
+            "type": "STRING",
+            "value": "--"
+          }
+        ]
+      }
     },
     "filename": {
       "type": "TOKEN",
@@ -134,7 +140,7 @@
         "value": 1,
         "content": {
           "type": "PATTERN",
-          "value": "[^\\n\\-][^-\\n]*[^\\n\\-]|[^\\n\\-]"
+          "value": "[^-\\n][^-\\n]*[^-\\n]|[^-\\n]"
         }
       }
     },
@@ -165,7 +171,7 @@
               },
               {
                 "type": "PATTERN",
-                "value": ".*"
+                "value": "[^\\n]*"
               }
             ]
           },

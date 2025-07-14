@@ -21,11 +21,15 @@ this:
     (comment_line))
   (file_entry
     (file_marker
-      (filename))
+      (marker_start)
+      (filename)
+      (marker_end))
     (file_content_line))
   (file_entry
     (file_marker
-      (filename))
+      (marker_start)
+      (filename)
+      (marker_end))
     (file_content_line)
     (file_content_line)
     (file_content_line)
