@@ -42,7 +42,7 @@ module.exports = grammar({
     marker_start: ($) => token(seq("--", /[ \t]*/)),
     marker_end: ($) => token(seq(/[ \t]*/, "--")),
 
-    filename: ($) => token(prec(1, /[^-\n][^-\n]*[^-\n]|[^-\n]/)),
+    filename: ($) => /[^-\n \t][^-\n]*[^-\n \t]/,
 
     file_content_line: ($) => token(prec(-1, /[^\n]*\n?/)),
   },
