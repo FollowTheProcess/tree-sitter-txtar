@@ -1,0 +1,40 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "txtar",
+      "camelcase": "Txtar",
+      "title": "Txtar",
+      "scope": "source.txtar",
+      "file-types": [
+        "txtar"
+      ],
+      "injection-regex": "^txtar$",
+      "class-name": "TreeSitterTxtar"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "A Tree Sitter Grammar for the txtar file format (https://pkg.go.dev/golang.org/x/tools/txtar)",
+    "authors": [
+      {
+        "name": "Tom Fleet",
+        "email": "me@followtheprocess.codes",
+        "url": "https://www.followtheprocess.codes/"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/FollowTheProcess/tree-sitter-txtar"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true,
+    "zig": false
+  }
+}
