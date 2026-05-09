@@ -250,21 +250,21 @@
   (file_marker (filename) @_filename)
   (file_content) @injection.content)
   (#match? @_filename "(^|/)go\\.mod$")
-  (#set! injection.language "gomod")
+  (#set! injection.language "Go Mod")
   (#set! injection.combined))
 
 ((file_entry
   (file_marker (filename) @_filename)
   (file_content) @injection.content)
   (#match? @_filename "(^|/)go\\.sum$")
-  (#set! injection.language "gosum")
+  (#set! injection.language "Go Sum")
   (#set! injection.combined))
 
 ((file_entry
   (file_marker (filename) @_filename)
   (file_content) @injection.content)
   (#match? @_filename "(^|/)go\\.work$")
-  (#set! injection.language "gowork")
+  (#set! injection.language "Go Work")
   (#set! injection.combined))
 
 ((file_entry
