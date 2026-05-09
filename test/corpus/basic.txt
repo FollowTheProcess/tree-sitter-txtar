@@ -1,10 +1,7 @@
 ==================
-Basic Structure
+Basic structure
 ==================
-
-# This is a line comment, to be ignored
-
-Here is some text in the top level comment section
+Here is some text in the top level comment section.
 
 -- file1.txt --
 Some arbitrary content in file1.txt
@@ -13,24 +10,80 @@ this:
   one:
     is:
       - yaml
-
 ---
 
 (source_file
-  (comment_section
-    (comment_line))
+  (comment
+    (text_line)
+    (text_line))
   (file_entry
     (file_marker
       (marker_start)
       (filename)
       (marker_end))
-    (file_content_line))
+    (file_content
+      (text_line)))
   (file_entry
     (file_marker
       (marker_start)
       (filename)
       (marker_end))
-    (file_content_line)
-    (file_content_line)
-    (file_content_line)
-    (file_content_line)))
+    (file_content
+      (text_line)
+      (text_line)
+      (text_line)
+      (text_line))))
+
+==================
+No comment section
+==================
+-- only.txt --
+hello
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (text_line))))
+
+==================
+Comment only, no file entries
+==================
+just a comment
+on multiple lines
+
+with a blank line in the middle
+---
+
+(source_file
+  (comment
+    (text_line)
+    (text_line)
+    (text_line)
+    (text_line)))
+
+==================
+Empty file content
+==================
+-- a.txt --
+-- b.txt --
+content of b
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end)))
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (text_line))))

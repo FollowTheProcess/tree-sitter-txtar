@@ -9,6 +9,11 @@ tasks:
     cmds:
       - task --list
 
+  dev:
+    desc: Set up the dev environment
+    cmds:
+      - bun install
+
   gen:
     desc: Generate the parser
     sources:

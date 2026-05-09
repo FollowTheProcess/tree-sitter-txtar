@@ -1,0 +1,53 @@
+==================
+Missing trailing newline on last content line
+==================
+-- a.txt --
+no trailing newline
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (text_line))))
+
+==================
+Marker at end of file with no trailing newline
+==================
+-- empty.txt --
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))))
+
+==================
+Multiple files back to back
+==================
+-- a.txt --
+hello
+-- b.txt --
+world
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (text_line)))
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (text_line))))

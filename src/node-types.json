@@ -1,11 +1,6 @@
 [
   {
-    "type": "comment_line",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "comment_section",
+    "type": "comment",
     "named": true,
     "fields": {},
     "children": {
@@ -13,27 +8,37 @@
       "required": true,
       "types": [
         {
-          "type": "comment_line",
+          "type": "text_line",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "file_content_line",
+    "type": "file_content",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "text_line",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "file_entry",
     "named": true,
     "fields": {
       "content": {
-        "multiple": true,
+        "multiple": false,
         "required": false,
         "types": [
           {
-            "type": "file_content_line",
+            "type": "file_content",
             "named": true
           }
         ]
@@ -63,27 +68,21 @@
             "named": true
           }
         ]
-      },
-      "marker_end": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "marker_end",
-            "named": true
-          }
-        ]
-      },
-      "marker_start": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "marker_start",
-            "named": true
-          }
-        ]
       }
+    },
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "marker_end",
+          "named": true
+        },
+        {
+          "type": "marker_start",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -96,7 +95,7 @@
       "required": false,
       "types": [
         {
-          "type": "comment_section",
+          "type": "comment",
           "named": true
         },
         {
@@ -105,10 +104,6 @@
         }
       ]
     }
-  },
-  {
-    "type": "\n",
-    "named": false
   },
   {
     "type": "filename",
@@ -120,6 +115,10 @@
   },
   {
     "type": "marker_start",
+    "named": true
+  },
+  {
+    "type": "text_line",
     "named": true
   }
 ]

@@ -1,0 +1,111 @@
+==================
+Filename with hyphen
+==================
+-- my-file.txt --
+hello
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (text_line))))
+
+==================
+Filename as a path
+==================
+-- path/to/file.go --
+package main
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (text_line))))
+
+==================
+Filename with multiple dots
+==================
+-- archive.tar.gz --
+binary
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (text_line))))
+
+==================
+Filename containing spaces
+==================
+-- my file with spaces.txt --
+content
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (text_line))))
+
+==================
+Single character filename
+==================
+-- a --
+just a
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (text_line))))
+
+==================
+Filename with underscores and digits
+==================
+-- foo_bar_123.txt --
+ok
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (text_line))))
+
+==================
+Marker with extra inner whitespace
+==================
+--    spaced.txt    --
+content
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (text_line))))

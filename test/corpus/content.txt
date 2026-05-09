@@ -1,0 +1,108 @@
+==================
+Content with blank lines preserved
+==================
+-- a.txt --
+line one
+
+line three
+
+
+line six
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (text_line)
+      (text_line)
+      (text_line)
+      (text_line)
+      (text_line)
+      (text_line))))
+
+==================
+Content lines starting with a single dash
+==================
+-- list.md --
+- item one
+- item two
+- item three
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (text_line)
+      (text_line)
+      (text_line))))
+
+==================
+Content lines starting with double dash but no space
+==================
+-- args.txt --
+--flag value
+--another-flag
+--
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (text_line)
+      (text_line)
+      (text_line))))
+
+==================
+Content containing the marker prefix mid line
+==================
+-- weird.txt --
+this line has -- in the middle and is not a marker
+neither is this one --
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (text_line)
+      (text_line))))
+
+==================
+Comment followed by content with markdown headings
+==================
+# Top of archive
+# Used as a fixture for tool X
+
+-- doc.md --
+# Heading
+some text
+---
+
+(source_file
+  (comment
+    (text_line)
+    (text_line)
+    (text_line))
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (text_line)
+      (text_line))))
