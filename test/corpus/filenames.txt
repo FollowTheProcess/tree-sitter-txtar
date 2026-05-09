@@ -109,3 +109,53 @@ content
       (marker_end))
     (file_content
       (text_line))))
+
+==================
+Go module manifest filename
+==================
+-- go.mod --
+module example.com/m
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (text_line))))
+
+==================
+Filename without extension (Dockerfile)
+==================
+-- Dockerfile --
+FROM scratch
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (text_line))))
+
+==================
+Filename without extension under a subdirectory (Makefile)
+==================
+-- build/Makefile --
+all:
+	echo hi
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (text_line)
+      (text_line))))
