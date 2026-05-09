@@ -6,10 +6,9 @@
       "camelcase": "Txtar",
       "title": "Txtar",
       "scope": "source.txtar",
-      "path": ".",
-      "highlights": "queries/highlights.scm",
-      "injections": "queries/injections.scm",
-      "file-types": ["txtar"],
+      "file-types": [
+        "txtar"
+      ],
       "injection-regex": "^txtar$",
       "class-name": "TreeSitterTxtar"
     }
@@ -22,20 +21,22 @@
       {
         "name": "Tom Fleet",
         "email": "me@followtheprocess.codes",
-        "url": "https://www.followtheprocess.codes/"
+        "url": "www.followtheprocess.codes"
       }
     ],
     "links": {
-      "repository": "https://github.com/FollowTheProcess/tree-sitter-txtar"
+      "repository": "https://github.com/FollowTheProcess/tree-sitter-txtar",
+      "funding": ""
     }
   },
   "bindings": {
     "c": true,
     "go": true,
+    "java": false,
     "node": true,
     "python": true,
     "rust": true,
     "swift": true,
-    "zig": false
+    "zig": true
   }
 }

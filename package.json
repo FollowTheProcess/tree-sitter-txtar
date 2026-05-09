@@ -2,7 +2,12 @@
   "name": "tree-sitter-txtar",
   "version": "0.1.0",
   "description": "A Tree Sitter Grammar for the txtar file format (https://pkg.go.dev/golang.org/x/tools/txtar)",
-  "repository": "https://github.com/followtheprocess/tree-sitter-txtar",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/followtheprocess/tree-sitter-txtar.git"
+  },
+  "funding": "",
   "license": "MIT",
   "author": {
     "name": "Tom Fleet",
@@ -28,15 +33,16 @@
     "*.wasm"
   ],
   "dependencies": {
-    "node-addon-api": "^8.3.1",
+    "node-addon-api": "^8.5.0",
     "node-gyp-build": "^4.8.4"
   },
   "devDependencies": {
     "prebuildify": "^6.0.1",
-    "tree-sitter-cli": "^0.26.0"
+    "tree-sitter": "^0.25.0",
+    "tree-sitter-cli": "^0.26.8"
   },
   "peerDependencies": {
-    "tree-sitter": "^0.22.4 || ^0.25.0"
+    "tree-sitter": "^0.25.0"
   },
   "peerDependenciesMeta": {
     "tree-sitter": {
