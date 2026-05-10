@@ -1,0 +1,120 @@
+==================
+Comment-only file (no markers)
+==================
+just some prose
+across two lines
+
+---
+
+(source_file
+  (comment_section
+    (comment_line)
+    (comment_line)))
+
+==================
+File starts with marker (no comment section)
+==================
+-- file.txt --
+content
+
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (file_content_line))))
+
+==================
+Comment section then multiple files
+==================
+intro line one
+intro line two
+
+-- a.txt --
+a content
+-- b.txt --
+b content
+
+---
+
+(source_file
+  (comment_section
+    (comment_line)
+    (comment_line)
+    (comment_line))
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (file_content_line)))
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (file_content_line))))
+
+==================
+Content without trailing newline at EOF
+==================
+-- file.txt --
+no newline here
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (file_content_line))))
+
+==================
+Marker only, without trailing newline at EOF
+==================
+-- file.txt --
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))))
+
+==================
+Adjacent markers with no content between
+==================
+-- a --
+-- b --
+-- c --
+final
+
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end)))
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end)))
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (file_content_line))))
