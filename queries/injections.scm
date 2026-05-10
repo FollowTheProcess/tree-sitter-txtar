@@ -128,6 +128,13 @@
 ((file_entry
   (file_marker (filename) @_filename)
   (file_content) @injection.content)
+  (#match? @_filename "\\.http$")
+  (#set! injection.language "http")
+  (#set! injection.combined))
+
+((file_entry
+  (file_marker (filename) @_filename)
+  (file_content) @injection.content)
   (#match? @_filename "\\.sql$")
   (#set! injection.language "sql")
   (#set! injection.combined))
