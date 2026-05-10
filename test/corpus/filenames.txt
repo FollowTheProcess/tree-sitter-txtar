@@ -1,0 +1,112 @@
+==================
+Filename with hyphens
+==================
+-- foo-bar.txt --
+hello
+
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (file_content_line))))
+
+==================
+Single-character filename
+==================
+-- a --
+hi
+
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (file_content_line))))
+
+==================
+Filename with multiple hyphens and dots
+==================
+-- cmd-line-tool.test.go --
+package main
+
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (file_content_line))))
+
+==================
+Filename with no extension
+==================
+-- file --
+content
+
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (file_content_line))))
+
+==================
+Extensionless capitalised filename
+==================
+-- Makefile --
+all:
+	echo hi
+-- Dockerfile --
+FROM scratch
+
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (file_content_line)
+      (file_content_line)))
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (file_content_line))))
+
+==================
+Filename with directory path
+==================
+-- pkg/sub-dir/file.go --
+content
+
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (file_content_line))))

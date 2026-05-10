@@ -1,0 +1,161 @@
+==================
+Unix absolute path
+==================
+-- /usr/local/bin/foo.sh --
+#!/bin/sh
+
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (file_content_line))))
+
+==================
+Unix relative nested path
+==================
+-- pkg/cmd/internal/main_test.go --
+package main
+
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (file_content_line))))
+
+==================
+Unix dotfile and tilde
+==================
+-- .gitignore --
+node_modules/
+-- ~/.config/app.toml --
+key = "value"
+
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (file_content_line)))
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (file_content_line))))
+
+==================
+Unix path with spaces
+==================
+-- My Project/release notes.md --
+hello
+
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (file_content_line))))
+
+==================
+Windows backslash path
+==================
+-- dir\subdir\file.txt --
+content
+
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (file_content_line))))
+
+==================
+Windows drive letter path
+==================
+-- C:\Users\me\file.txt --
+content
+
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (file_content_line))))
+
+==================
+Windows UNC path
+==================
+-- \\server\share\folder\file.txt --
+unc content
+
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (file_content_line))))
+
+==================
+Windows path with spaces
+==================
+-- C:\Program Files\App\config.ini --
+[section]
+
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (file_content_line))))
+
+==================
+Path with mixed separators
+==================
+-- src\pkg/util.go --
+package util
+
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (file_content_line))))

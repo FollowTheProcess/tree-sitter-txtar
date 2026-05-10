@@ -1,0 +1,103 @@
+==================
+Content line starting with -- but no closing dashes
+==================
+-- real.txt --
+content
+-- looks like marker but isnt
+more content
+
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (file_content_line)
+      (file_content_line)
+      (file_content_line))))
+
+==================
+Indented marker is content
+==================
+-- file.txt --
+   -- not_a_marker --
+content
+
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (file_content_line)
+      (file_content_line))))
+
+==================
+Marker without space before closing dashes is content
+==================
+-- file.txt --
+--no-space--
+real content
+
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (file_content_line)
+      (file_content_line))))
+
+==================
+Two-dash line alone is content
+==================
+-- file.txt --
+--
+done
+
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (file_content_line)
+      (file_content_line))))
+
+==================
+Pseudo-marker followed by real marker
+==================
+-- a.txt --
+not -- a marker
+-- b.txt --
+done
+
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (file_content_line)))
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (file_content_line))))

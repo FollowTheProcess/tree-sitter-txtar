@@ -20,6 +20,21 @@
     }
   },
   {
+    "type": "file_content",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "file_content_line",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "file_content_line",
     "named": true,
     "fields": {}
@@ -29,11 +44,11 @@
     "named": true,
     "fields": {
       "content": {
-        "multiple": true,
+        "multiple": false,
         "required": false,
         "types": [
           {
-            "type": "file_content_line",
+            "type": "file_content",
             "named": true
           }
         ]
@@ -105,10 +120,6 @@
         }
       ]
     }
-  },
-  {
-    "type": "\n",
-    "named": false
   },
   {
     "type": "filename",

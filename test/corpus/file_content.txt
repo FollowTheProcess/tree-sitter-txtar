@@ -1,0 +1,85 @@
+==================
+Shell script content with hash comments
+==================
+-- script.sh --
+#!/bin/bash
+# this is a bash comment
+echo hello
+
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (file_content_line)
+      (file_content_line)
+      (file_content_line))))
+
+==================
+Python content with hash comments
+==================
+-- main.py --
+# top of file
+def main():
+    pass
+
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (file_content_line)
+      (file_content_line)
+      (file_content_line))))
+
+==================
+Empty file content
+==================
+-- a.txt --
+-- b.txt --
+b
+
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end)))
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (file_content_line))))
+
+==================
+Blank lines preserved as content
+==================
+-- file.txt --
+line 1
+
+line 3
+
+---
+
+(source_file
+  (file_entry
+    (file_marker
+      (marker_start)
+      (filename)
+      (marker_end))
+    (file_content
+      (file_content_line)
+      (file_content_line)
+      (file_content_line))))

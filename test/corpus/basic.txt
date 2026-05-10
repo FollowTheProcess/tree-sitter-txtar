@@ -18,19 +18,25 @@ this:
 
 (source_file
   (comment_section
+    (comment_line)
+    (comment_line)
+    (comment_line)
+    (comment_line)
     (comment_line))
   (file_entry
     (file_marker
       (marker_start)
       (filename)
       (marker_end))
-    (file_content_line))
+    (file_content
+      (file_content_line)))
   (file_entry
     (file_marker
       (marker_start)
       (filename)
       (marker_end))
-    (file_content_line)
-    (file_content_line)
-    (file_content_line)
-    (file_content_line)))
+    (file_content
+      (file_content_line)
+      (file_content_line)
+      (file_content_line)
+      (file_content_line))))
